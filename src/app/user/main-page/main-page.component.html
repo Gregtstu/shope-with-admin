@@ -1,0 +1,10 @@
+<section *ngIf="products$; else loading">
+
+  <mat-card class="example-card" *ngFor="let product of products$" >
+    <app-product [product]="product"></app-product>
+  </mat-card>
+</section>
+
+<ng-template #loading>
+  <mat-spinner></mat-spinner>
+</ng-template>
