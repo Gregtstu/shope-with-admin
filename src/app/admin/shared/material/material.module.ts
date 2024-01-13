@@ -14,13 +14,11 @@ import {MatButtonModule} from "@angular/material/button";
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
-    MatSidenavModule,
     MatButtonModule
   ],
   exports: [
     MatToolbarModule,
     MatIconModule,
-    MatSidenavModule,
     MatSidenavModule,
     MatButtonModule
   ]

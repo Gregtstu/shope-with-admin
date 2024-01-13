@@ -12,12 +12,12 @@ export const childRoutes = [
   {
     path: 'orders',
     component: OrdersComponent,
-    data: { icon: 'orders', text: 'orders' }
+    data: { icon: 'whatshot', text: 'orders' }
   },
   {
     path: 'add',
     component: AddPageComponent,
-    data: { icon: 'add', text: 'add' }
+    data: { icon: 'add_alert', text: 'add' }
   },
   {
     path: 'product/:id/edit',
