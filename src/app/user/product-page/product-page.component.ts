@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { switchMap } from 'rxjs';
-import {IProduct, ProductService} from "../../services/product.service";
+import { IProduct, ProductService } from 'src/app/services/product.service';
 
 
 @Component({
@@ -16,11 +16,11 @@ export class ProductPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.rout.params.subscribe(res => {
-      // this.productId = res;
+      this.productId = res;
     });
-    // this.productServe.getById(this.productId.id).subscribe(res => {
-    //   this.product = res;
-    // });
+    this.productServe.getById(this.productId.id).subscribe(res => {
+      this.product = res;
+    });
   }
 
   addProduct(product:IProduct){

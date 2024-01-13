@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import {Data} from "@angular/router";
-// import { ProductService } from 'src/app/service/product.service';
+import { ProductService } from 'src/app/services/product.service';
 
 
 @Component({
@@ -11,24 +11,13 @@ import {Data} from "@angular/router";
 })
 export class MainPageComponent implements OnInit {
 
-  public products$ = [
-    {
-  data:11.01,
-  foto: 'string',
-  information:'string',
-  name:'string',
-  price:'number',
-  product: 'string',
-  id:'string',
-  type:'string',
-}
-  ]
-  // constructor(public productServ: ProductService) { }
+  public products$!:any;
+  constructor(public productServ: ProductService) { }
 
   ngOnInit(): void {
-    // this.productServ.getAll().subscribe( res =>{
-    //   this.products$ = res;
-    // })
+    this.productServ.getAll().subscribe( res =>{
+      this.products$ = res;
+    })
   }
 
 

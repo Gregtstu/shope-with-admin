@@ -1,1 +1,31 @@
-<p>product-page works!</p>
+<mat-card class="example-card" *ngIf="product; else loading">
+    <div class="end">
+        <button [routerLink]="['/']"  mat-raised-button color="primary">Back</button>
+    </div>
+    <div style="display: flex;">
+
+        <div class="left" style="width: 50%;">
+            <mat-card-header>
+                <mat-card-title>{{product.name}}</mat-card-title>
+              </mat-card-header>
+              <div class="img">
+                <quill-view-html [content]="product.foto"></quill-view-html>
+            
+              </div>
+              <mat-card-content style="width: 15%; text-align: center;" >
+                <h2 style="font-size: 30px;">{{product.price | currency}}</h2>
+              </mat-card-content>
+              <mat-card-actions>
+                <button [routerLink]="['/cart']" mat-raised-button color="accent" style=" width: 100%; text-align: center;" (click)="addProduct(product)">Add to cart</button>
+              </mat-card-actions>
+        </div>
+        <div class="right">
+            <quill-view-html [content]="product.information"></quill-view-html>
+        </div>
+    </div>
+
+</mat-card>
+
+<ng-template #loading>
+  <mat-spinner></mat-spinner>
+</ng-template>

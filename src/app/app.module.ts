@@ -13,6 +13,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MaterialModule} from "./user/shared/material/material.module";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {MatCardModule} from "@angular/material/card";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { QuillModule } from 'ngx-quill';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,11 @@ import {MatCardModule} from "@angular/material/card";
     BrowserAnimationsModule,
     MaterialModule,
     MatProgressSpinnerModule,
-    MatCardModule
+    MatCardModule,
+    FormsModule,
+     ReactiveFormsModule,
+     HttpClientModule,
+     QuillModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

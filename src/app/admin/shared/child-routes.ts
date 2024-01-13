@@ -1,27 +1,21 @@
 import {OrdersComponent} from "../orders/orders.component";
 import {AddPageComponent} from "../add-page/add-page.component";
-import {EditPageComponent} from "../edit-page/edit-page.component";
 import {DashboardComponent} from "../dashboard/dashboard.component";
 
 export const childRoutes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
-    data: { icon: 'dashboard', text: 'Table' }
+    data: { icon: 'dashboard', text: 'Dashboard' }
   },
   {
     path: 'orders',
     component: OrdersComponent,
-    data: { icon: 'whatshot', text: 'orders' }
+    data: { icon: 'whatshot', text: 'Orders' }
   },
   {
     path: 'add',
     component: AddPageComponent,
-    data: { icon: 'add_alert', text: 'add' }
+    data: { icon: 'add_alert', text: 'Add Product' }
   },
-  {
-    path: 'product/:id/edit',
-    component: EditPageComponent,
-    data: { icon: 'table', text: 'product' }
-  }
 ];
