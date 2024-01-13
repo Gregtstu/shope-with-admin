@@ -14,7 +14,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-// import { AuthGuard } from './shared/auth.guard';
+import { AuthGuard } from './shared/auth.guard';
 import {MatSelectModule} from '@angular/material/select';
 import { QuillModule } from 'ngx-quill';
 import {MatTableModule} from '@angular/material/table';
@@ -54,10 +54,10 @@ import {MatSidenavModule} from "@angular/material/sidenav";
         path: '', component: AdminLayoutComponent, children:[
           {path: '', redirectTo:'/admin/login', pathMatch: 'full'},
           {path: 'login', component: LoginComponent},
-          {path: 'dashboard', component: DashboardComponent},
-          {path: 'orders', component: OrdersComponent},
-          {path: 'add', component: AddPageComponent},
-          {path: 'product/:id/edit', component: EditPageComponent}
+          {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
+          {path: 'orders', component: OrdersComponent, canActivate: [AuthGuard]},
+          {path: 'add', component: AddPageComponent, canActivate: [AuthGuard]},
+          {path: 'product/:id/edit', component: EditPageComponent, canActivate: [AuthGuard]}
         ]
     }
     ])

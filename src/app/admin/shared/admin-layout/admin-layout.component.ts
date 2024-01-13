@@ -3,6 +3,7 @@ import {Router} from "@angular/router";
 import {MatSidenav, MatSidenavContainer, MatSidenavModule} from "@angular/material/sidenav";
 import {childRoutes} from "../child-routes";
 import {MatButtonModule} from "@angular/material/button";
+import { AuthService } from 'src/app/services/auth.service';
 
 
 @Component({
@@ -27,17 +28,27 @@ export class AdminLayoutComponent {
   hasBackdrop: boolean = false;
   toolBarHeight = 64;
   routes = childRoutes;
-  constructor(private readonly router: Router) {}
+  constructor(
+    public auth: AuthService, 
+    private rout: Router
+    ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.auth.isAuthenticated());
+    
+  }
 
   toggleSidebar(): void {
     this.sideNavToggled.emit();
   }
 
   onLoggedout() {
-    localStorage.removeItem('isLoggedin');
-    this.router.navigate(['/']);
+    this.rout.navigate(['/']);
+  }
+
+  logout(){
+    this.auth.logout();
+    this.rout.navigate(['/admin', 'login'])
   }
 
 }

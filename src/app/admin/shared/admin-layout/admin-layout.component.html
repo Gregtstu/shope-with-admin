@@ -12,6 +12,11 @@
       <span>{{ item.data.text }}</span>
     </a>
   </li>
+  <li *ngIf="auth.isAuthenticated()"
+  ><a [routerLink]="['/admin']" (click)="logout()">
+    <mat-icon color="primary" class="sidenav-icon" >exit_to_app</mat-icon>
+      <span>Logout</span>
+  </a></li>
 </ul>
   </mat-drawer>
 
