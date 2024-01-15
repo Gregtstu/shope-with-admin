@@ -18,4 +18,9 @@ export const childRoutes = [
     component: AddPageComponent,
     data: { icon: 'add_alert', text: 'Add Product' }
   },
+  {
+    path: 'wheel',
+    component: AddPageComponent,
+    data: { icon: 'slow_motion_video', text: 'Wheel' }
+  },
 ];

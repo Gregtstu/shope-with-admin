@@ -22,6 +22,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatSidenavModule} from "@angular/material/sidenav";
+import { WheelComponent } from './wheel/wheel.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {MatSidenavModule} from "@angular/material/sidenav";
     DashboardComponent,
     OrdersComponent,
     AddPageComponent,
-    EditPageComponent
+    EditPageComponent,
+    WheelComponent
   ],
   imports: [
     CommonModule,
@@ -57,6 +59,7 @@ import {MatSidenavModule} from "@angular/material/sidenav";
           {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
           {path: 'orders', component: OrdersComponent, canActivate: [AuthGuard]},
           {path: 'add', component: AddPageComponent, canActivate: [AuthGuard]},
+          {path: 'wheel', component: WheelComponent, canActivate: [AuthGuard]},
           {path: 'product/:id/edit', component: EditPageComponent, canActivate: [AuthGuard]}
         ]
     }
