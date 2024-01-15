@@ -90,7 +90,6 @@ public prizeNodes!: any;
   selectPrize() {
     const selected = Math.floor(this.rotation / this.prizeSlice);
     this.prizeNodes[selected].classList.add(this.selectedClass);
-    // reaper.dataset.reaction = prizeNodes[selected].dataset.reaction;
   };
   spinertia  (min:any, max:any)  {
     min = Math.ceil(min);
@@ -104,7 +103,6 @@ public prizeNodes!: any;
 
   rotateWheel() {
     this.rotation = Math.floor(Math.random() * 360 + this.spinertia(2000, 5000));
-    console.log(this.prizeNodes)
     this.wheel.nativeElement.classList.add(this.spinClass);
     this.spinner.nativeElement.style.setProperty("--rotate", this.rotation);
   }

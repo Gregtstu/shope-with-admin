@@ -2,22 +2,24 @@
 
   <span>LOGO SHOP</span>
   <ul>
-    <li routerLinkActive="active1" [routerLinkActiveOptions]="{exact: true}">
+    <li>
       <a (click)="setType('Phone')"
-         [ngClass]="{ active: activeClass }"
+         [ngClass]="{ active: activeClass == 'Phone'}"
       >Phone</a>
     </li>
     <li>
       <a (click)="setType('Laptop')"
+         [ngClass]="{ active: activeClass == 'Laptop'}"
       >Laptop</a>
     </li>
     <li>
       <a (click)="setType('Tablet')"
+         [ngClass]="{ active: activeClass == 'Tablet'}"
       >Tablet</a>
     </li>
     <li>
       <a (click)="setType('Cart')"
-         [routerLink]="['/cart']"
+         [ngClass]="{ active: activeClass == 'Cart'}"
       >Cart</a>
     </li>
   </ul>

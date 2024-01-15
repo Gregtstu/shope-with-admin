@@ -2,8 +2,8 @@ import {AfterViewInit, Component, ViewChild, OnInit} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
-// import { OrderService } from 'src/app/service/order.service';
-// import { ProductService } from 'src/app/service/product.service';
+import { OrderService } from 'src/app/services/order.service';
+import { ProductService } from 'src/app/services/product.service';
 import { UserData } from '../dashboard/dashboard.component';
 
 @Component({
@@ -18,11 +18,7 @@ export class OrdersComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor() {
-    // Create 100 users
-
-
-    // Assign the data to the data source for the table to render
+  constructor(private orderServ: OrderService) {
     this.dataSource = new MatTableDataSource();
   }
   ngOnInit(): void {
@@ -45,31 +41,31 @@ export class OrdersComponent implements OnInit {
 
 
   getAllProducts() {
-    // this.orderServ.getAll()
-    //   .subscribe({
-    //     next: (res) => {
-    //       this.dataSource = new MatTableDataSource(res);
-    //       this.dataSource.paginator = this.paginator;
-    //       this.dataSource.sort = this.sort;
-    //     },
-    //     error: () => {
-    //       alert('error while product added');
-    //     }
-    //   });
+    this.orderServ.getAll()
+      .subscribe({
+        next: (res) => {
+          this.dataSource = new MatTableDataSource(res);
+          this.dataSource.paginator = this.paginator;
+          this.dataSource.sort = this.sort;
+        },
+        error: () => {
+          alert('error while product added');
+        }
+      });
   }
 
   deleteProduct(id: string){
-    // this.orderServ.deleteProduct(id)
-    //   .subscribe({
-    //     next: (res) => {
-    //       alert('Заказ удален!');
-    //       this.getAllProducts();
+    this.orderServ.deleteProduct(id)
+      .subscribe({
+        next: (res) => {
+          alert('Заказ удален!');
+          this.getAllProducts();
 
-    //     },
-    //     error: () => {
-    //       alert('На данный момент заказов нет!');
-    //     }
-    //   });
+        },
+        error: () => {
+          alert('На данный момент заказов нет!');
+        }
+      });
     }
 
 }

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Data } from '@angular/router';
-import { map, Observable } from 'rxjs';
+import {BehaviorSubject, map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 export interface IProduct {
@@ -19,11 +19,11 @@ export interface IProduct {
   providedIn: 'root'
 })
 export class ProductService {
-  public type:any;
+  public type:BehaviorSubject<string>;
   public cartProducts:IProduct[];
   constructor(private http: HttpClient) {
     this.cartProducts = [];
-    this.type = 'Phone';
+    this.type = new BehaviorSubject<string>('Phone');
   }
 
   create(obj:any):Observable<any>{
@@ -72,7 +72,7 @@ export class ProductService {
   }
 
   setType(type:any){
-    return this.type = type;
+    return this.type.next(type);
   }
 
   addProductInCart(product:IProduct){

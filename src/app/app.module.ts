@@ -16,6 +16,12 @@ import {MatCardModule} from "@angular/material/card";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { QuillModule } from 'ngx-quill';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatSelectModule} from "@angular/material/select";
+import {MatTableModule} from "@angular/material/table";
+import {MatPaginatorModule} from "@angular/material/paginator";
+import {MatIconModule} from "@angular/material/icon";
+import {MatInputModule} from "@angular/material/input";
 
 @NgModule({
   declarations: [
@@ -35,9 +41,15 @@ import { QuillModule } from 'ngx-quill';
     MatProgressSpinnerModule,
     MatCardModule,
     FormsModule,
-     ReactiveFormsModule,
-     HttpClientModule,
-     QuillModule.forRoot(),
+    ReactiveFormsModule,
+    HttpClientModule,
+    QuillModule.forRoot(),
+    MatFormFieldModule,
+    MatSelectModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatIconModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
