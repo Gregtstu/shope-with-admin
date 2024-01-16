@@ -35,8 +35,18 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "ru": {
+            "translation": "src/locale/messages.ru.xlf"
+          }
+        }
+      },
       "architect": {
         "build": {
+          "localize": true,
+          "i18nMissingTranslation": "error",
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/shope-with-admin-crm",
@@ -58,6 +68,11 @@
             "scripts": []
           },
           "configurations": {
+            "ru": {
+              "localize": [
+                "ru"
+              ]
+            },
             "production": {
               "budgets": [
                 {
@@ -87,6 +102,9 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
+            "ru": {
+              "browserTarget": "shope-with-admin-CRM:build:production,ru"
+            },
             "production": {
               "browserTarget": "shope-with-admin-CRM:build:production"
             },
@@ -99,7 +117,9 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "shope-with-admin-CRM:build"
+            "browserTarget": "shope-with-admin-CRM:build",
+            "format": "xlf",
+            "outputPath": "src/locale"
           }
         },
         "test": {

@@ -39,3 +39,14 @@
     }
   }
 }
+
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+  }
+}

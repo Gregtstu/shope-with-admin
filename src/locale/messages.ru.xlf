@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template" target-language="ru">
+    <body>
+      <trans-unit id="3797778920049399855" datatype="html">
+        <source>Logout</source>
+         <target>Выход</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/admin/shared/admin-layout/admin-layout.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+            <trans-unit id="6570363013146073520" datatype="html">
+              <source>Dashboard</source>
+              <target>Вся продукция</target>
+              <context-group purpose="location">
+                <context context-type="sourcefile">src/app/admin/shared/admin-layout/admin-layout.component.html</context>
+                <context context-type="linenumber">12</context>
+              </context-group>
+            </trans-unit>
+            <trans-unit id="6575195871133210332" datatype="html">
+              <source>Orders</source>
+              <target>Заказы</target>
+              <context-group purpose="location">
+                <context context-type="sourcefile">src/app/admin/shared/admin-layout/admin-layout.component.html</context>
+                <context context-type="linenumber">18</context>
+              </context-group>
+            </trans-unit>
+            <trans-unit id="3582198355480978215" datatype="html">
+              <source>Add Product</source>
+              <target>Добавить продукт</target>
+              <context-group purpose="location">
+                <context context-type="sourcefile">src/app/admin/shared/admin-layout/admin-layout.component.html</context>
+                <context context-type="linenumber">24</context>
+              </context-group>
+            </trans-unit>
+            <trans-unit id="93222677820351538" datatype="html">
+              <source>Wheel</source>
+              <target>Колесо</target>
+              <context-group purpose="location">
+                <context context-type="sourcefile">src/app/admin/shared/admin-layout/admin-layout.component.html</context>
+                <context context-type="linenumber">30</context>
+              </context-group>
+            </trans-unit>
+    </body>
+  </file>
+</xliff>
