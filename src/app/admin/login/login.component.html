@@ -1,0 +1,20 @@
+<div class="example-container">
+    <form [formGroup]="form" (submit)="submit()">
+        <mat-form-field appearance="fill">
+          <mat-label>Enter your email</mat-label>
+          <input formControlName="email" matInput placeholder="otus@mail.ru">
+          <mat-error></mat-error>
+        </mat-form-field>
+
+        <mat-form-field hintLabel="Max 6 characters" appearance="fill">
+            <mat-label>Enter your password</mat-label>
+            <input formControlName="password" matInput [type]="hide ? 'password' : 'text'"  #input maxlength="6" >
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+
+          <button type="submit" mat-raised-button color="primary" [disabled]="form.invalid">Primary</button>
+    </form>
+
+  </div>

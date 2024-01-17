@@ -1,0 +1,28 @@
+<mat-toolbar color="primary">
+
+  <span>LOGO SHOP</span>
+  <ul>
+    <li>
+      <a (click)="setType('Phone')"
+         [ngClass]="{ active: activeClass == 'Phone'}"
+      >Phone</a>
+    </li>
+    <li>
+      <a (click)="setType('Laptop')"
+         [ngClass]="{ active: activeClass == 'Laptop'}"
+      >Laptop</a>
+    </li>
+    <li>
+      <a (click)="setType('Tablet')"
+         [ngClass]="{ active: activeClass == 'Tablet'}"
+      >Tablet</a>
+    </li>
+    <li>
+      <a (click)="setType('Cart')"
+         [ngClass]="{ active: activeClass == 'Cart'}"
+      >Cart</a>
+    </li>
+  </ul>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

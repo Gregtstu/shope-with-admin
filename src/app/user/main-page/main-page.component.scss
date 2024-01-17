@@ -1,0 +1,16 @@
+section{
+    width: 55%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.example-card {
+    max-width: 200px;
+}
+
+mat-spinner{
+    margin: 250px auto;
+}

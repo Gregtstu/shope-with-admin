@@ -1,0 +1,53 @@
+<mat-toolbar color="primary" class="fix-nav">
+  <button type="button" mat-icon-button (click)="drawer.toggle()">
+    <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+  </button>
+  <ul>
+    <li *ngFor="let locale of localesList">
+      <a href="/{{locale.code}}/">
+        {{locale.label}}
+      </a>
+    </li>
+  </ul>
+</mat-toolbar>
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer class="example-sidenav-drawer" #drawer class="example-sidenav" mode="side">
+    <ul>
+      <li>
+        <a [routerLinkActive]="'active-link'" [routerLink]="['dashboard']">
+          <mat-icon color="primary" class="sidenav-icon">dashboard</mat-icon>
+          <span i18n>Dashboard</span>
+        </a>
+      </li>
+      <li>
+        <a [routerLinkActive]="'active-link'" [routerLink]="['orders']">
+          <mat-icon color="primary" class="sidenav-icon">whatshot</mat-icon>
+          <span i18n>Orders</span>
+        </a>
+      </li>
+      <li>
+        <a [routerLinkActive]="'active-link'" [routerLink]="['add']">
+          <mat-icon color="primary" class="sidenav-icon">add_alert</mat-icon>
+          <span i18n>Add Product</span>
+        </a>
+      </li>
+      <li>
+        <a [routerLinkActive]="'active-link'" [routerLink]="['wheel']">
+          <mat-icon color="primary" class="sidenav-icon">slow_motion_video</mat-icon>
+          <span i18n>Wheel</span>
+        </a>
+      </li>
+      <li *ngIf="auth.isAuthenticated()">
+        <a [routerLink]="['/admin']" (click)="logout()">
+          <mat-icon color="primary" class="sidenav-icon">exit_to_app</mat-icon>
+          <span i18n>Logout</span>
+        </a>
+      </li>
+    </ul>
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <router-outlet></router-outlet>
+  </div>
+
+</mat-drawer-container>
